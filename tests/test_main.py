@@ -8,3 +8,7 @@ def sample_text():
     return "Hello Vlada. Sing songs. stay strong. Vlada. I live in Kyiv, Ukraine. Stay strong. Hello Harry. Vlada. Stay. stay here. stay."
 
 
+@pytest.fixture
+def sample_output_filename():
+    return "test_top_words.txt"
+
