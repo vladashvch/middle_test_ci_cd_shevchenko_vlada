@@ -49,6 +49,22 @@ def find_top_words(text: str, n=10):
     return top_words
 
 
+def write_to_file(top_words: str, output_filename: str):
+    """
+    Writes the top words and their frequencies to a file.
+
+    Parameters:
+    top_words (list): A list of tuples containing the top words and their frequencies.
+    output_filename (str): The path to the output file.
+
+    Returns:
+    None
+    """
+    with open(output_filename, 'w', encoding='utf-8') as file:
+        for word, count in top_words:
+            file.write(f"{word}-{count}\n")
+
+
 def get_output_filename():
     """
     Returns the path to the input file.
