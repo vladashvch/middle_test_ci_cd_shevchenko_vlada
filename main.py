@@ -11,3 +11,8 @@ def get_output_filename():
     return os.path.join('results', 'top_words.txt')
 
 
+def get_input_filename():
+    """
+    Повертає шлях до вхідного файлу.
+    """
+    return os.path.join('assets', 'data.txt')
