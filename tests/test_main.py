@@ -18,3 +18,8 @@ def expected_top_words():
     return [('hello', 2), ('i', 1), ('in', 1), ('kyiv', 1), ('live', 1), ('sing', 1), ('songs', 1), ('stay', 5), ('strong', 2), ('vlada', 3)]
 
 
+def test_clean_text(sample_text):
+    cleaned_text = clean_text(sample_text)
+    assert cleaned_text == "hello vlada  sing songs  stay strong  vlada  i live in kyiv  ukraine  stay strong  hello harry  vlada  stay  stay here  stay "
+
+
