@@ -53,3 +53,6 @@ def test_write_to_file(tmpdir, sample_output_filename, expected_top_words):
 def test_get_input_filename():
     assert get_input_filename() == os.path.join('assets', 'data.txt')
 
+
+def test_get_output_filename():
+    assert get_output_filename() == os.path.join('results', 'top_words.txt')
