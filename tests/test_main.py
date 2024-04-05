@@ -32,4 +32,10 @@ def test_read_text(tmpdir, sample_text):
     assert read_text_content == sample_text
 
 
+def test_find_top_words(sample_text, expected_top_words):
+    top_words = find_top_words(sample_text)
+    top_words = sorted(top_words, key=lambda x: x[0])
+    expected_top_words = sorted(expected_top_words, key=lambda x: x[0])
+    assert top_words == expected_top_words
+
 
