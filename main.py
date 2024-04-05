@@ -80,3 +80,24 @@ def get_input_filename():
     Повертає шлях до вхідного файлу.
     """
     return os.path.join('assets', 'data.txt')
+
+
+def main():
+    """
+    Reads the input file, finds the top words, writes the result to the output file, and prints a message.
+
+    Returns:
+    None
+    """
+    input_filename = get_input_filename()
+    output_filename = get_output_filename()
+    
+    text = read_text(input_filename)
+    top_words = find_top_words(text)
+    write_to_file(top_words, output_filename)
+    
+    print(f"Top words saved to {output_filename}")
+
+
+if __name__ == '__main__':
+    main()
