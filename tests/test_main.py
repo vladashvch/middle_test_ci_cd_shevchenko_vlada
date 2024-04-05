@@ -12,3 +12,9 @@ def sample_text():
 def sample_output_filename():
     return "test_top_words.txt"
 
+
+@pytest.fixture
+def expected_top_words():
+    return [('hello', 2), ('i', 1), ('in', 1), ('kyiv', 1), ('live', 1), ('sing', 1), ('songs', 1), ('stay', 5), ('strong', 2), ('vlada', 3)]
+
+
