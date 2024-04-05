@@ -31,6 +31,24 @@ def read_text(filename: str):
     return text
 
 
+def find_top_words(text: str, n=10):
+    """
+    Finds the top N most common words in the text.
+
+    Parameters:
+    text (str): The input text to analyze.
+    n (int): The number of top words to find. Default is 10.
+
+    Returns:
+    list: A list of tuples containing the top words and their frequencies.
+    """
+    cleaned_text = clean_text(text)
+    words = cleaned_text.split()
+    word_counts = Counter(words)
+    top_words = word_counts.most_common(n)
+    return top_words
+
+
 def get_output_filename():
     """
     Returns the path to the input file.
