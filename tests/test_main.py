@@ -23,3 +23,13 @@ def test_clean_text(sample_text):
     assert cleaned_text == "hello vlada  sing songs  stay strong  vlada  i live in kyiv  ukraine  stay strong  hello harry  vlada  stay  stay here  stay "
 
 
+def test_read_text(tmpdir, sample_text):
+    file_path = os.path.join(tmpdir, "test_read_text.txt")
+    with open(file_path, "w", encoding="utf-8") as file:
+        file.write(sample_text)
+
+    read_text_content = read_text(file_path)
+    assert read_text_content == sample_text
+
+
+
