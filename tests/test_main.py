@@ -48,3 +48,8 @@ def test_write_to_file(tmpdir, sample_output_filename, expected_top_words):
 
     expected_output = "\n".join([f"{word}-{count}" for word, count in sorted(expected_top_words, key=lambda x: x[0])])
     assert content == expected_output
+
+
+def test_get_input_filename():
+    assert get_input_filename() == os.path.join('assets', 'data.txt')
+
