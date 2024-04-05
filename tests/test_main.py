@@ -39,3 +39,12 @@ def test_find_top_words(sample_text, expected_top_words):
     assert top_words == expected_top_words
 
 
+def test_write_to_file(tmpdir, sample_output_filename, expected_top_words):
+    output_file_path = os.path.join(tmpdir, sample_output_filename)
+    write_to_file(expected_top_words, output_file_path)
+
+    with open(output_file_path, "r", encoding="utf-8") as file:
+        content = file.read().strip()
+
+    expected_output = "\n".join([f"{word}-{count}" for word, count in sorted(expected_top_words, key=lambda x: x[0])])
+    assert content == expected_output
